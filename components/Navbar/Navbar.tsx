@@ -1,12 +1,19 @@
 import { Input } from "@/components/ui/input"
-import { UserButton } from "@clerk/nextjs"
 import { Menu, Search } from "lucide-react"
+import {
+    ClerkProvider,
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton
+  } from '@clerk/nextjs'
 import {
     Sheet,
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet"
 import SidebarRoutes from "../SidebarRoutes/SidebarRoutes"
+import { ModeToggle } from "../ToggleTheme"
 
 export default function Navbar() {
     return (
@@ -18,7 +25,7 @@ export default function Navbar() {
                             <Menu />
                         </SheetTrigger>
                         <SheetContent side='left'>
-                            <SidebarRoutes/>
+                            <SidebarRoutes />
                         </SheetContent>
                     </Sheet>
                 </div>
@@ -27,8 +34,13 @@ export default function Navbar() {
                     <Search strokeWidth={1} className="absolute top-2 right-2" />
                 </div>
                 <div className="flex gap-x-2 items-center">
-                    <p>toggletheme</p>
-                    <UserButton />
+                    <ModeToggle/>
+                    <SignedOut>
+                        <SignInButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
             </div>
 

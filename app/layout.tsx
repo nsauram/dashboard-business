@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Noto_Sans_Display} from "next/font/google";
+import { Noto_Sans_Display } from "next/font/google";
 import {
   ClerkProvider,
   SignInButton,
@@ -7,9 +7,10 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 
-const noto = Noto_Sans_Display({subsets:['latin']})
+const noto = Noto_Sans_Display({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Dashboard Business | Noelia",
@@ -25,13 +26,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          {/* <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn> */}
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

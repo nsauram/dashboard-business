@@ -25,3 +25,29 @@ export const dataGeneralSidebar =[
         href: '/calendar'
     },
 ]
+
+export const dataToolsSidebar = [
+    {
+        icon:CircleHelp,
+        label:'Faqs',
+        href:'/faqs'
+    },
+    {
+        icon:BarChart4,
+        label:'Analytics',
+        href:'/analytics'
+    }
+]
+
+export const dataSupportSidebar = [
+    {
+        icon:Settings,
+        label:'Setting',
+        href:'/setting'
+    },
+    {
+        icon:ShieldCheck,
+        label:'Security',
+        href:'/security'
+    }
+]
