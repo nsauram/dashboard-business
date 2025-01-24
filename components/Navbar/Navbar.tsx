@@ -18,7 +18,7 @@ import { ModeToggle } from "../ToggleTheme"
 export default function Navbar() {
     return (
         <>
-            <div className="flex justify-between items-center px-2 gap-x-4 w-full md:px-6 bg-background border-b h-20">
+            <nav className="flex justify-between items-center px-2 gap-x-4 w-full md:px-6 bg-background border-b h-20">
                 <div className="block md:hidden">
                     <Sheet>
                         <SheetTrigger className="flex items-center">
@@ -42,8 +42,7 @@ export default function Navbar() {
                         <UserButton />
                     </SignedIn>
                 </div>
-            </div>
-
+            </nav>
         </>
     )
 }
